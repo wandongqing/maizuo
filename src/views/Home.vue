@@ -1,18 +1,43 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="wrap">
+      <router-view></router-view>
+    </div>
+    <van-tabbar route class="bgcolor">
+        <van-tabbar-item replace to="/films" icon="video-o">
+          电影
+        </van-tabbar-item>
+        <van-tabbar-item replace to="/cinemas" icon="photo-o">
+          影院
+        </van-tabbar-item>
+        <van-tabbar-item  url="http://baidu.com" icon="newspaper-o">
+          咨询
+        </van-tabbar-item>
+        <van-tabbar-item replace to="/center" icon="manager-o">
+          我的
+        </van-tabbar-item>
+  </van-tabbar>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
   components: {
-    HelloWorld
   }
 }
 </script>
+<style scoped lang="less">
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .wrap {
+    flex: 1;
+  }
+  .bgcolor {
+    height: 49px;
+    background-color: #fff;
+  }
+}
+</style>
